@@ -1,32 +1,17 @@
+import 'package:codefactory_flutter/screen/home_screen.dart';
+import 'package:codefactory_flutter/screen/splash.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
+    MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      routes: routes,
     ),
   );
 }
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFFF8911),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset("asset/img/logo.jpeg"),
-          const CircularProgressIndicator(
-            color: Colors.white,
-          ),
-        ],
-      ),
-    );
-  }
-}
+final routes = {
+  "/": (BuildContext context) => const HomeScreen(),
+  "/splash": (BuildContext context) => const Splash(),
+};
