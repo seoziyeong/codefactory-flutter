@@ -1,21 +1,17 @@
+import 'package:codefactory_flutter/screen/home_screen.dart';
+import 'package:codefactory_flutter/screen/splash.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
+    MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.black,
-        body: Center(
-          child: Text(
-            "Hello World",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-            ),
-          ),
-        ),
-      ),
+      routes: routes,
     ),
   );
 }
+
+final routes = {
+  "/": (BuildContext context) => const HomeScreen(),
+  "/splash": (BuildContext context) => const Splash(),
+};
