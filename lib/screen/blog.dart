@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class Blog extends StatefulWidget {
+  const Blog({super.key});
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<Blog> createState() => _BlogState();
 }
 
 // home url 설정
 // loadRequest에 String이 아닌 Uri 타입이 들어가야 하므로, Uri 파싱
 final homeUrl = Uri.parse("https://velog.io/@berrry");
 
-class _HomeScreenState extends State<HomeScreen> {
+class _BlogState extends State<Blog> {
   // WebViewController 설정
   final WebViewController _webViewController = WebViewController()
     ..setJavaScriptMode(JavaScriptMode.unrestricted) // js 허용
