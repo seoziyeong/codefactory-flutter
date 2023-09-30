@@ -1,3 +1,6 @@
+import 'package:codefactory_flutter/screen/blog.dart';
+import 'package:codefactory_flutter/screen/home_screen.dart';
+import 'package:codefactory_flutter/screen/splash.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,8 +10,15 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   runApp(
-    const MaterialApp(
+    MaterialApp(
       debugShowCheckedModeBanner: false,
+      routes: routes,
     ),
   );
 }
+
+final routes = {
+  "/": (BuildContext context) => const HomeScreen(),
+  "/splash": (BuildContext context) => const Splash(),
+  "/blog": (BuildContext context) => const Blog(),
+};
